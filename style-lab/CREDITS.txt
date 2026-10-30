@@ -1,0 +1,10 @@
+Alfred visual direction study, 30 October 2026.
+
+Original Alfred compositions use design vocabulary from Frontend Slides / Beautiful HTML Templates (Neo-Grid Bold, Raw Grid, BlockFrame), by Zara Zhang and contributors.
+https://github.com/zarazhangrui/frontend-slides
+https://github.com/zarazhangrui/beautiful-html-templates
+Template code notice: TEMPLATE-LICENSE.txt
+
+Fonts: Space Grotesk, Archivo Black, Bricolage Grotesque and JetBrains Mono from Google Fonts. Open Font License notices are included under fonts/.
+
+These are illustrative concepts for a proposed product. No actual booking, card issuance, bank deployment or payment is represented.
