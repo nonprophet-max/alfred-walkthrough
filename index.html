@@ -229,6 +229,16 @@
 @media(max-width:599px){.research-toc ul{columns:1}.research-document h2{font-size:30px}.research-document h3{font-size:25px}}
 @media print{.mobile-toc,.task-reference~.step-detail{display:none!important}.task-reference{display:block!important}.read-all .chapter{margin-bottom:0}.research-document h3{break-after:avoid}.research-document .quiet-table{min-width:0;font-size:9pt}.research-toc{break-inside:avoid}.research-toc ul{columns:2}.research-document{max-width:none}}
 
+/* Keep click-through navigation in view while chapter content scrolls. */
+@media screen{
+ html.interactive-ready{scroll-padding-bottom:calc(var(--walkthrough-controls-height,96px) + 16px)}
+ .interactive-ready body:not(.read-all) .reader{padding-bottom:calc(var(--walkthrough-controls-height,96px) + 24px)}
+ .interactive-ready body:not(.read-all) .next-back{position:fixed;bottom:0;left:max(244px,calc((100% - 1600px)/2 + 244px));right:max(0px,calc((100% - 1600px)/2));z-index:30;margin:0;padding:12px clamp(24px,4vw,64px) calc(12px + env(safe-area-inset-bottom,0px));background:var(--pl-paper);box-shadow:0 -6px 20px rgba(28,30,33,.06)}
+ .next-back button{flex-shrink:0}.next-back .next-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+@media screen and (max-width:1180px){.interactive-ready body:not(.read-all) .next-back{padding-left:32px;padding-right:32px}}
+@media screen and (max-width:899px){.interactive-ready body:not(.read-all) .next-back{left:0;right:0}}
+@media screen and (max-width:599px){.interactive-ready body:not(.read-all) .next-back{padding-left:20px;padding-right:20px;gap:12px}.next-back button{flex:1;min-width:0;padding:12px 10px;font-size:14px;line-height:1.4}}
 </style>
 </head>
 <body class="read-all">
@@ -791,6 +801,10 @@ document.getElementById('print').addEventListener('click',()=>window.print());
 show(Math.max(0,chapterAtHash()));
 document.documentElement.classList.add('interactive-ready');
 document.body.classList.remove('read-all');
+const controls=document.querySelector('.next-back');
+const reserveControlsSpace=()=>document.documentElement.style.setProperty('--walkthrough-controls-height',Math.ceil(controls.getBoundingClientRect().height)+'px');
+if(typeof ResizeObserver==='function')new ResizeObserver(reserveControlsSpace).observe(controls);
+window.addEventListener('resize',reserveControlsSpace);reserveControlsSpace();
 } catch(error) {
  document.documentElement.classList.remove('interactive-ready');
  document.body.classList.add('read-all');
