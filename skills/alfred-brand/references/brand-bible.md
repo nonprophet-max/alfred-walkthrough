@@ -18,7 +18,7 @@ The ambition spans a standalone consumer product and bank/neobank distribution. 
 
 ### The architectural story
 
-FireFlow offers a starting foundation for durable workflows, permission boundaries, approval pauses, isolated execution, recorded events and recovery. Alfred’s thesis is to build on that rigor from the outset so the core can serve both Telegram and higher-stakes bank environments.
+FireFlow offers a starting foundation for durable workflows, permission boundaries, approval pauses, isolated execution, recorded events and recovery. This foundation of reliability lets Alfred both serve **you** effectively from your pocket via Telegram or be deployed as a scaled, personalised Chief of Staff utility for the user base of an entire digital banking app.
 
 A conversational interface alone does not supply banking-grade execution controls. Explain that architectural gap precisely; do not claim that every other assistant lacks such controls, or that using FireFlow automatically makes Alfred compliant or bank-ready.
 
