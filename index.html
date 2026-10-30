@@ -237,7 +237,7 @@
  <div class="brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 21" role="img" aria-label="Persistent Labs"><g fill="currentColor"><path d="M4.39736 20.0548C-1.94875 15.1978 -1.28266 5.82736 5.46964 1.67684C7.69121 0.311941 10.3883 -0.250189 12.9525 0.103068C13.5801 0.187772 14.1971 0.321567 14.7929 0.514077C13.5637 0.550654 12.348 0.665198 11.1622 0.944338C5.41959 2.16197 1.02265 7.51087 1.75419 13.4594C2.0006 15.8254 3.0623 18.0807 4.39736 20.0548Z"/><path d="M6.89844 17.0713C8.09585 18.1677 9.59743 19.1658 11.2184 19.0407C13.516 18.8578 15.5268 16.9106 17.1217 15.3609C21.6274 11.0842 30.0478 -1.45781 37.0571 1.18921C38.3604 1.68974 39.4144 2.73892 40.1074 3.88436C39.4086 3.34629 38.6781 2.87753 37.9138 2.58106C35.9617 1.79466 34.0819 2.46171 32.4552 3.60137C30.7678 4.78819 29.349 6.25705 27.9042 7.80002C25.5565 10.3315 23.3311 13.0017 20.8256 15.4379C19.195 17.0078 17.4519 18.5306 15.4045 19.5682C11.948 21.3479 8.72344 20.6193 6.8994 17.0713H6.89844Z"/><path d="M13.8281 4.46155C16.8525 3.89076 19.742 6.03917 21.8962 7.90364C24.0543 9.79986 25.9832 12.0224 28.0777 13.91C29.4706 15.142 30.949 16.2624 32.8857 16.686C29.8296 17.2548 26.9853 15.1719 24.7945 13.2891C22.6287 11.3967 20.7036 9.16554 18.6187 7.2645C17.2115 5.99971 15.7359 4.87833 13.8281 4.46155Z"/><path d="M42.4229 0.945841C48.769 5.80288 48.1029 15.1733 41.3506 19.3238C39.13 20.6887 36.4329 21.2509 33.8677 20.8967C33.2402 20.812 32.6232 20.6782 32.0273 20.4857C33.2565 20.4491 34.4722 20.3345 35.6581 20.0554C41.4016 18.8387 45.7986 13.4898 45.067 7.54125C44.8206 5.17529 43.7589 2.92004 42.4239 0.945841H42.4229Z"/></g></svg>
 <span>Persistent Labs</span></div>
  <span class="masthead-note">RESEARCH → UNDERSTANDING → POSSIBILITY</span>
- <div class="top-actions"><button id="reading-mode" type="button">Read one chapter at a time</button><button id="print" type="button">Print / save PDF</button></div>
+ <div class="top-actions"><button id="reading-mode" type="button">Read everything</button><button id="print" type="button">Print / save PDF</button></div>
 </header>
 <div class="layout">
  <aside class="sidebar"><p class="sidebar-label">YOUR WALKTHROUGH</p><nav class="chapter-nav" aria-label="Chapters"><a href="#the-big-picture"><span>01</span>The big picture</a><a href="#meet-instinct"><span>02</span>Meet Instinct</a><a href="#how-it-works"><span>03</span>How a task gets done</a><a href="#why-it-connects"><span>04</span>Why people want it</a><a href="#the-headlines"><span>05</span>What success still needs</a><a href="#payments-have-moved"><span>06</span>Payments already exist</a><a href="#where-it-breaks"><span>07</span>Where the limits are</a><a href="#one-alfred-several-routes"><span>08</span>One Alfred, several routes</a><a href="#a-day-with-alfred"><span>09</span>A day with Alfred</a><a href="#the-card"><span>10</span>What the card adds</a><a href="#telegram"><span>11</span>Telegram’s role</a><a href="#fireflow"><span>12</span>Where FireFlow fits</a><a href="#trust-and-control"><span>13</span>Trust and operating roles</a><a href="#economics"><span>14</span>Rewards and economics</a><a href="#what-to-carry-forward"><span>15</span>What to carry forward</a><a href="#full-research"><span>16</span>Complete research &amp; sources</a></nav><div class="sidebar-foot">Research dated<br><strong>29 October 2026</strong><br><br>Alfred is a proposed product.<br>Consumer and bank routes<br>are both in scope.</div></aside>
@@ -748,7 +748,7 @@ const chapters=Array.from(document.querySelectorAll('.chapter'));
 const nav=document.querySelector('.sidebar .chapter-nav');
 const select=document.getElementById('chapter-select');
 const progress=document.querySelector('[role="progressbar"]');
-let active=0, readAll=true;
+let active=0, readAll=false;
 function chapterAtHash(){const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));return target?chapters.findIndex(s=>s===target||s.contains(target)):-1}
 function rememberHash(id,push){try{if(location.hash!=='#'+id)history[push?'pushState':'replaceState'](null,'','#'+id)}catch(error){/* Reading and controls still work in restricted previews. */}}
 function show(index,move=false,push=false,anchor=null){
@@ -769,7 +769,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 document.getElementById('previous').addEventListener('click',()=>show(active-1,true,true));
 document.getElementById('next').addEventListener('click',()=>show(active===chapters.length-1?0:active+1,true,true));
 select.addEventListener('change',()=>show(Number(select.value),true,true));
-document.getElementById('reading-mode').addEventListener('click',e=>{readAll=!readAll;document.body.classList.toggle('read-all',readAll);e.currentTarget.textContent=readAll?'Read one chapter at a time':'Show complete reading view';show(active,true)});
+document.getElementById('reading-mode').addEventListener('click',e=>{readAll=!readAll;document.body.classList.toggle('read-all',readAll);e.currentTarget.textContent=readAll?'Return to click-through':'Read everything';show(active,true)});
 function restoreHash(){const i=chapterAtHash();if(i>=0)show(i,true,false,document.getElementById(decodeURIComponent(location.hash.slice(1))))}
 window.addEventListener('hashchange',restoreHash);window.addEventListener('popstate',restoreHash);
 document.addEventListener('keydown',e=>{if(readAll||e.altKey||e.ctrlKey||e.metaKey||['INPUT','SELECT','TEXTAREA','BUTTON','SUMMARY','A'].includes(document.activeElement.tagName))return;if(e.key==='ArrowRight'){e.preventDefault();show(active===chapters.length-1?0:active+1,true,true)}if(e.key==='ArrowLeft'){e.preventDefault();show(active-1,true,true)}});
@@ -790,6 +790,7 @@ window.addEventListener('afterprint',()=>{printDetails.forEach(([d,open])=>d.ope
 document.getElementById('print').addEventListener('click',()=>window.print());
 show(Math.max(0,chapterAtHash()));
 document.documentElement.classList.add('interactive-ready');
+document.body.classList.remove('read-all');
 } catch(error) {
  document.documentElement.classList.remove('interactive-ready');
  document.body.classList.add('read-all');
