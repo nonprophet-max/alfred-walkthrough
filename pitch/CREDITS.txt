@@ -1,0 +1,7 @@
+Alfred product vision, 30 October 2026.
+Original pitch composition and generated concierge illustration developed for Alfred.
+Fonts from Google Fonts: Archivo Black, Space Grotesk, JetBrains Mono. Font licence notices included.
+Fixed-stage presentation base adapted from Frontend Slides, by Zara Zhang and contributors (MIT; TEMPLATE-LICENSE.txt).
+https://github.com/zarazhangrui/frontend-slides
+
+The supplied visual reference informed the graphic direction; its artwork is not reproduced in the deck.
