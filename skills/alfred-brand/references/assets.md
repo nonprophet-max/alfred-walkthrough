@@ -13,7 +13,14 @@ Paths below are relative to the skill folder.
 | `assets/fonts/spacegrotesk.ttf` | Space Grotesk variable body type |
 | `assets/fonts/jetbrainsmono.ttf` | JetBrains Mono variable labels |
 | `assets/tokens.json` | Canonical palette, type and geometry values |
-| `assets/tokens.css` | Scoped CSS variables and utility classes |
+| `assets/tokens.css` | Generated scoped CSS variables, complete typography roles and spacing utilities |
+| `assets/fonts.css` | Real local @font-face declarations; preserve its fonts/ sibling directory |
+| `assets/shadcn-v4.css` | Optional standalone Tailwind v4 theme/typography integration fragment |
+| `assets/examples/type-spacing.html` | Executable plain-CSS specimen and awkward-label cases |
+| `references/typography-and-spacing.md` | Exact implementation contract for type, spacing and media |
+| `references/shadcn-integration.md` | Shared component recipes, font wiring and host/portal boundaries |
+| `scripts/build_tokens.py` | Portable standard-library CSS generator |
+| `scripts/check_contract.py` | Portable static contract validation |
 | `assets/contrast.json` | Calculated WCAG contrast ratios for the exact palette |
 | `assets/examples/alfred-pitch-cover.png` | Current visual benchmark, not a mandatory page template |
 | `references/brand-bible.html` | Standalone visual bible for human review |

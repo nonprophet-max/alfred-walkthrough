@@ -1,0 +1,63 @@
+/* Tailwind v4 integration fragment, for a standalone Alfred app only.
+   Import after Tailwind, fonts.css and tokens.css in the existing global CSS.
+   For a mixed-brand host, use prefixed tokens.css instead of global font mappings. */
+@theme inline {
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-display: "Archivo Black", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: .25rem;
+  --radius-md: .5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-4xl: 9999px;
+}
+.alfred-theme {
+  --background: var(--alfred-paper);
+  --foreground: var(--alfred-ink);
+  --card: var(--alfred-white);
+  --card-foreground: var(--alfred-ink);
+  --popover: var(--alfred-white);
+  --popover-foreground: var(--alfred-ink);
+  --primary: var(--alfred-pink);
+  --primary-foreground: var(--alfred-ink);
+  --secondary: var(--alfred-white);
+  --secondary-foreground: var(--alfred-ink);
+  --muted: var(--alfred-paper);
+  --muted-foreground: var(--alfred-muted);
+  --accent: var(--alfred-paper);
+  --accent-foreground: var(--alfred-ink);
+  --border: var(--alfred-ink);
+  --input: var(--alfred-ink);
+  --ring: var(--alfred-blue);
+}
+@utility type-hero {font-family:"Archivo Black",sans-serif;font-size:clamp(3rem,7vw,5rem);font-weight:400;line-height:1.04;letter-spacing:-0.04em;font-synthesis:none;}
+@utility type-heading {font-family:"Archivo Black",sans-serif;font-size:clamp(2.25rem,4vw,3rem);font-weight:400;line-height:1.1;letter-spacing:-0.035em;font-synthesis:none;}
+@utility type-section {font-family:"Archivo Black",sans-serif;font-size:clamp(1.75rem,3vw,2.25rem);font-weight:400;line-height:1.15;letter-spacing:-0.025em;font-synthesis:none;}
+@utility type-component-title {font-family:"Space Grotesk",sans-serif;font-size:1.25rem;font-weight:600;line-height:1.4;letter-spacing:-0.015em;font-synthesis:none;}
+@utility type-lead {font-family:"Space Grotesk",sans-serif;font-size:1.25rem;font-weight:400;line-height:1.5;letter-spacing:0em;font-synthesis:none;}
+@utility type-body {font-family:"Space Grotesk",sans-serif;font-size:1rem;font-weight:400;line-height:1.5;letter-spacing:0em;font-synthesis:none;}
+@utility type-body-small {font-family:"Space Grotesk",sans-serif;font-size:0.875rem;font-weight:400;line-height:1.428571;letter-spacing:0em;font-synthesis:none;}
+@utility type-label {font-family:"Space Grotesk",sans-serif;font-size:0.875rem;font-weight:600;line-height:1.428571;letter-spacing:0em;font-synthesis:none;}
+@utility type-control {font-family:"Space Grotesk",sans-serif;font-size:1rem;font-weight:600;line-height:1.5;letter-spacing:0em;font-synthesis:none;}
+@utility type-input {font-family:"Space Grotesk",sans-serif;font-size:1rem;font-weight:400;line-height:1.5;letter-spacing:0em;font-synthesis:none;}
+@utility type-caption {font-family:"JetBrains Mono",monospace;font-size:0.75rem;font-weight:400;line-height:1.333333;letter-spacing:0.04em;font-synthesis:none;}
+@utility type-amount {font-family:"Space Grotesk",sans-serif;font-size:1.75rem;font-weight:600;line-height:1.2;letter-spacing:-0.02em;font-synthesis:none;font-variant-numeric:tabular-nums;}

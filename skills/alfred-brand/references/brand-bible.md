@@ -1,6 +1,6 @@
 # Alfred brand bible
 
-**Provisional v0.1 · 30 October 2026**
+**Provisional v0.2 · 30 October 2026**
 
 This edition records the current owner-selected direction and the three-page Alfred pitch. It is a working identity, ready to use and refine; it does not establish trademark registration, a live product or bank approval.
 
@@ -59,7 +59,9 @@ Use supplied font files rather than relying on a remote font service. Never synt
 
 On a 1920 × 1080 slide, the current system uses roughly 95–198 px display type, 24–38 px body copy and 18–22 px labels. These are examples from the pitch, not a requirement to force every artifact into that format. For reading websites, use comfortable 16–20 px body text and responsive layout.
 
-Display line height is usually close to 1.0. Body copy needs more breathing room. Review actual words at the intended dimensions; a short headline should not become an unreadable block simply to look bold.
+The exact implementation contract is now in [Typography and spacing](typography-and-spacing.md). It specifies every role’s family, weight, size, line-height and tracking. Product body text is Space Grotesk 400 at 16/24px; component titles use Space Grotesk 600 at 20/28px. Large editorial headings use Archivo Black 400. Labels and instructions must remain readable rather than being scaled with an entire slide on a phone.
+
+The supplied fonts.css loads the actual bundled faces. Use the generated type-role classes and verify loaded fonts in the browser; a family name in CSS does not establish that the intended file rendered.
 
 ## 5. Wordmark and avatar
 
@@ -85,7 +87,11 @@ Rounded black frames, outlined pills and confident dividers are part of Alfred. 
 
 Use hard offset shadows selectively. Texture is subtle and should not reduce contrast. The PDF can omit page-wide grain to stay compact while retaining ink texture in the illustration.
 
-For a pitch, preserve one dominant idea per page. For ordinary websites, reflow content on narrow screens. For fixed 16:9 presentations, scale the canvas as a whole and keep navigation outside it, visible at the bottom.
+Use the 4px spacing scale and semantic gaps from the typography/spacing contract. Related content uses 16px; card/form groups 24px; labels and controls 8px; actions 12px. Card padding is 20px on phones and 24px wider. Default controls have a 44px minimum target and 16px text. One layout owner sets each gap, preventing doubled card/slot padding.
+
+For the online pitch, preserve one dominant idea per page and the approved vertical phone layout through 1000px. Desktop, PDF and embedded slide exports retain the authored 16:9 composition. Bottom navigation stays visible; content must have enough reserved space to scroll above it. The old whole-slide scaling rule applies to exports, not to phone reading.
+
+[shadcn integration](shadcn-integration.md) explains semantic theme mapping, shared component recipes, font variables and portal isolation. Alfred’s fonts and geometry take precedence over generic starter defaults.
 
 ## 8. Product and card concepts
 
@@ -127,7 +133,13 @@ Apply Alfred’s identity locally to Alfred’s name and product material: the o
 
 Instinct remains an external case study. Use explicit labels such as “External inspiration” and “Market benchmark”; do not put its name in an Alfred product lockup. Keep FireFlow’s own technical surface distinct. Alfred’s use of FireFlow is the proposed architecture, not an assertion of a new portfolio affiliation or signed partnership.
 
-## 12. Assets, usage and status
+## 12. Implementation specimens and verification
+
+Use [the live typography and spacing specimen](../assets/examples/type-spacing.html) to see the role hierarchy, spacing ladder and a realistic approval card. It includes both ordinary and long-label cases and a host/inset example. It is a plain-CSS reference; it does not claim that shadcn is installed or compiled here.
+
+The package includes a repeatable contract check for role completeness, font files, generated CSS and portable references. Browser checks additionally inspect loaded fonts, computed type, actual spacing, touch targets, focus, text enlargement and horizontal overflow. The [four-pass review record](design-review-2026-10-30.md) records the baseline gaps, reviewed shadcn material, decisions and verification boundaries.
+
+## 13. Assets, usage and status
 
 Use [the asset map](assets.md) to find outlined wordmarks, the avatar, illustration, card concept, typefaces and tokens. The package is portable: preserve the folder structure when installing or sharing the skill.
 
