@@ -1,0 +1,7 @@
+/* Alfred v0.1. Scope the surface class; keep host identities intact. */
+:root{--alfred-ink:#111110;--alfred-paper:#F7F7F2;--alfred-white:#FFFFFF;--alfred-muted:#353530;--alfred-pink:#FF4FA0;--alfred-blue:#1975FF;--alfred-font-display:'Archivo Black',sans-serif;--alfred-font-body:'Space Grotesk',sans-serif;--alfred-font-mono:'JetBrains Mono',monospace}
+.alfred-name{font-family:var(--alfred-font-display);font-weight:400;letter-spacing:-.025em;color:inherit}
+.alfred-surface{font-family:var(--alfred-font-body);background:var(--alfred-paper);color:var(--alfred-ink)}
+.alfred-surface .alfred-display{font-family:var(--alfred-font-display);font-weight:400;line-height:1;letter-spacing:-.04em}
+.alfred-surface .alfred-label{font-family:var(--alfred-font-mono);text-transform:uppercase}
+.alfred-panel{border:2px solid var(--alfred-ink);border-radius:20px;background:var(--alfred-paper);color:var(--alfred-ink)}

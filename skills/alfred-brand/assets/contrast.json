@@ -1,0 +1,51 @@
+[
+  {
+    "foreground": "ink",
+    "background": "paper",
+    "ratio": 17.58,
+    "normalTextAA": true,
+    "largeTextAA": true
+  },
+  {
+    "foreground": "ink",
+    "background": "white",
+    "ratio": 18.89,
+    "normalTextAA": true,
+    "largeTextAA": true
+  },
+  {
+    "foreground": "muted",
+    "background": "paper",
+    "ratio": 11.47,
+    "normalTextAA": true,
+    "largeTextAA": true
+  },
+  {
+    "foreground": "ink",
+    "background": "pink",
+    "ratio": 6.19,
+    "normalTextAA": true,
+    "largeTextAA": true
+  },
+  {
+    "foreground": "ink",
+    "background": "blue",
+    "ratio": 4.53,
+    "normalTextAA": true,
+    "largeTextAA": true
+  },
+  {
+    "foreground": "white",
+    "background": "blue",
+    "ratio": 4.18,
+    "normalTextAA": false,
+    "largeTextAA": true
+  },
+  {
+    "foreground": "white",
+    "background": "pink",
+    "ratio": 3.05,
+    "normalTextAA": false,
+    "largeTextAA": true
+  }
+]

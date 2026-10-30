@@ -1,0 +1,6 @@
+interface:
+  display_name: "Alfred Brand"
+  short_description: "Alfred visual identity, assets and brand voice"
+  default_prompt: "Use $alfred-brand to apply Alfred’s provisional visual identity and voice to this work."
+policy:
+  allow_implicit_invocation: true
